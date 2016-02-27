@@ -14,7 +14,7 @@ BASEPATH="/home/${USERNAME}"
 CONFIGPATH="${BASEPATH}/.rtorrent.rc"
 
 #Nom usuel de la seedbox
-SERVERNAME="Seedbox.couillet.ovh"
+SERVERNAME=""
 
 #Nom du binaire de rtorrent 
 SERVICE="rtorrent"
