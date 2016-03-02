@@ -4,6 +4,10 @@
 #############----------CONFIGURATION------------############
 ############################################################
 
+source /home/shrom/script/seedbox/include/sources.sh
+
+sources;
+
 #Utilisateur non-root qui utilisera rtorrent
 USERNAME=$2
 
@@ -14,7 +18,7 @@ BASEPATH="/home/${USERNAME}"
 CONFIGPATH="${BASEPATH}/.rtorrent.rc"
 
 #Nom usuel de la seedbox
-SERVERNAME=""
+SERVERNAME="seedbox.couillet.ovh"
 
 #Nom du binaire de rtorrent 
 SERVICE="rtorrent"
@@ -24,17 +28,6 @@ SCRNAME=seedbox
 
 #Options pour rtorrent
 OPTIONS=""
-
-source /etc/init.d/seedboxfunctions/asuser.sh
-source /etc/init.d/seedboxfunctions/checkfiles.sh
-source /etc/init.d/seedboxfunctions/checkrunning.sh
-source /etc/init.d/seedboxfunctions/checkuser.sh
-source /etc/init.d/seedboxfunctions/doconnect.sh
-source /etc/init.d/seedboxfunctions/dostart.sh
-source /etc/init.d/seedboxfunctions/dostatus.sh
-source /etc/init.d/seedboxfunctions/dostop.sh
-source /etc/init.d/seedboxfunctions/getsession.sh
-source /etc/init.d/seedboxfunctions/dorestart.sh
 
 ############################################################
 #############------END CONFIGURATION------------############

@@ -1,12 +1,10 @@
 #Fonction qui check et qui démarre ${SERVERNAME}
-
-source /etc/init.d/seedboxfunctions/checkuser.sh
-source /etc/init.d/seedboxfunctions/checkfiles.sh
-source /etc/init.d/seedboxfunctions/getsession.sh
-source /etc/init.d/seedboxfunctions/dostatus.sh
-source /etc/init.d/seedboxfunctions/getpid.sh
-
 do_start() {
+
+source /home/shrom/script/seedbox/include/sources.sh
+
+sources;
+
   check_user;
   check_files;
 

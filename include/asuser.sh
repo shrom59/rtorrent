@@ -1,6 +1,11 @@
 #Fonction qui vérifie si le script est bien lancé en tant que $USERNAME
+
 as_user() {
-  ME=`whoami`
+source /home/shrom/script/seedbox/include/sources.sh
+
+sources;
+
+ME=`whoami`
   if [ $ME == $USERNAME ] ; then
     bash -c "$1"
     echo "* This script as run from ${USERNAME}"

@@ -1,9 +1,8 @@
 do_stop() {
-source /etc/init.d/seedboxfunctions/checkuser.sh
-source /etc/init.d/seedboxfunctions/checkrunning.sh
-source /etc/init.d/seedboxfunctions/getsession.sh
-source /etc/init.d/seedboxfunctions/getpid.sh
-source /etc/init.d/seedboxfunctions/asuser.sh
+
+source /home/shrom/script/seedbox/include/sources.sh
+
+sources;
 
   check_user;
   check_running;
