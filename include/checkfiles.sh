@@ -1,11 +1,6 @@
 #Fonction qui vérifie si rTorrent est bien installé et si les fichier de configuration existe et son lisible
 
 check_files() {
-
-source /home/shrom/script/seedbox/include/sources.sh
-
-sources;
-
   RTORRENTEXISTS=0
   for i in `echo "$PATH" | tr ':' '\n'`;
   do

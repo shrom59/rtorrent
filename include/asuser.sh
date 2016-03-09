@@ -1,9 +1,6 @@
 #Fonction qui vérifie si le script est bien lancé en tant que $USERNAME
 
 as_user() {
-source /home/shrom/script/seedbox/include/sources.sh
-
-sources;
 
 ME=`whoami`
   if [ $ME == $USERNAME ] ; then

@@ -1,9 +1,4 @@
 do_stop() {
-
-source /home/shrom/script/seedbox/include/sources.sh
-
-sources;
-
   check_user;
   check_running;
   echo "* Attempting to stop ${SERVERNAME}..."

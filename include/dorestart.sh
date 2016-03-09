@@ -1,11 +1,6 @@
 #Fonction qui vérifie si rTorrent est en cours d'éxéction ou non.
 
 do_restart() {
-
-source /home/shrom/script/seedbox/include/sources.sh
-
-sources;
-
   get_session;
   if ! [ -s ${SESSIONPATH}/rtorrent.lock ];
   then

@@ -1,15 +1,28 @@
 #!/bin/bash
 
+### BEGIN INIT INFO
+# Provides:          seedbox.couillet.ovh 
+# Required-Start:    $remote_fs $syslog $network
+# Required-Stop:     $remote_fs $syslog $network
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start seedbox at boot time
+### END INIT INFO
+
+
 ############################################################
 #############----------CONFIGURATION------------############
 ############################################################
 
-source /home/shrom/script/seedbox/include/sources.sh
+#Emplacement du fichier source
+SOURCEPATH="/home/shrom/script/seedbox/include/sources.sh"
 
+source $SOURCEPATH
+echo $SOURCEPATH
 sources;
 
 #Utilisateur non-root qui utilisera rtorrent
-USERNAME=$2
+USERNAME=shrom
 
 #Emplacement des fichiers de configuration et du dossier "session"
 BASEPATH="/home/${USERNAME}"
@@ -29,12 +42,19 @@ SCRNAME=seedbox
 #Options pour rtorrent
 OPTIONS=""
 
+#Repertoire de téléchargement
+mountpoint="10.0.0.1:/home/shrom/vod.couillet.ovh"
+destfolder="/home/shrom/seedbox/done/"
+seedboxmount=$(mount $mountpoint $destfolder 2>&1 >/dev/null)
+mounttest=$(mount -l |grep vod.couillet.ovh)
+
+
 ############################################################
 #############------END CONFIGURATION------------############
 ############################################################
 
 ## These are the parameters passed to the script
-if [ $# -eq 2 ];
+if [ $# -eq 1 ];
 then
   case "$1" in
   'start')
@@ -53,11 +73,11 @@ then
     do_connect;
     ;;
   *)
-    echo "* usage: rtorrent {start|stop|restart|status|connect} username"
+    echo "* usage: rtorrent {start|stop|restart|status|connect}"
     exit 1;
     ;;
   esac
 else
-  echo "* usage: rtorrent {start|stop|restart|status|connect} username"
+  echo "* usage: rtorrent {start|stop|restart|status|connect}"
 fi
 exit 0;

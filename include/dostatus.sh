@@ -1,11 +1,6 @@
 # Give a bit more information than status
 
 do_status() {
-
-source /home/shrom/script/seedbox/include/sources.sh
-
-sources;
-
   check_user;
   check_running;
 
@@ -18,6 +13,7 @@ sources;
    echo -e "- Status                :""\\033[1;31m"" Failed ""\\033[0;39m"
   fi
   echo "- Base Path             : ${BASEPATH}"
+  echo "- Download Path         : $destfolder"
   echo "- Config File           : ${CONFIGPATH}"
   echo "- Tmux Session Name     : ${SCRNAME}"
   echo "- rTorrent Session Path : ${SESSIONPATH}"
