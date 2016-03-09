@@ -18,7 +18,6 @@
 SOURCEPATH="/home/shrom/script/seedbox/include/sources.sh"
 
 source $SOURCEPATH
-echo $SOURCEPATH
 sources;
 
 #Utilisateur non-root qui utilisera rtorrent
