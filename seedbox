@@ -15,7 +15,8 @@
 ############################################################
 
 #Emplacement du fichier source
-SOURCEPATH="/home/shrom/script/seedbox/include/sources.sh"
+SOURCEFILEPATH="/home/shrom/script/dl.couillet.ovh/include"
+SOURCEPATH="$SOURCEFILEPATH/sources.sh"
 
 source $SOURCEPATH
 sources;
@@ -30,23 +31,22 @@ BASEPATH="/home/${USERNAME}"
 CONFIGPATH="${BASEPATH}/.rtorrent.rc"
 
 #Nom usuel de la seedbox
-SERVERNAME="seedbox.couillet.ovh"
+SERVERNAME="dl.couillet.ovh"
 
 #Nom du binaire de rtorrent 
 SERVICE="rtorrent"
 
 #Nom de la session tmux
-SCRNAME=seedbox
+SCRNAME=dl
 
 #Options pour rtorrent
 OPTIONS=""
 
 #Repertoire de téléchargement
 mountpoint="10.0.0.1:/home/shrom/vod.couillet.ovh"
-destfolder="/home/shrom/seedbox/done/"
+destfolder="/home/shrom/dl.couillet.ovh/done/"
 seedboxmount=$(mount $mountpoint $destfolder 2>&1 >/dev/null)
 mounttest=$(mount -l |grep vod.couillet.ovh)
-
 
 ############################################################
 #############------END CONFIGURATION------------############

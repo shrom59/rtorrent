@@ -1,5 +1,5 @@
 sources(){
-include="/home/shrom/script/seedbox/include/"
+include="$SOURCEFILEPATH/"
 
 listinclude=$(ls -1 $include)
 
