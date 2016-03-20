@@ -43,8 +43,9 @@ SCRNAME=dl
 OPTIONS=""
 
 #Repertoire de téléchargement
-mountpoint="10.0.0.1:/home/shrom/vod.couillet.ovh"
-destfolder="/home/shrom/dl.couillet.ovh/done/"
+mountpointaddress="10.0.0.1"
+mountpoint="$mountpointaddress:$BASEPATH/vod.couillet.ovh"
+destfolder="$BASEPATH/$SERVERNAME/vod/"
 seedboxmount=$(mount $mountpoint $destfolder 2>&1 >/dev/null)
 mounttest=$(mount -l |grep vod.couillet.ovh)
 
