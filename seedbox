@@ -15,7 +15,7 @@
 ############################################################
 
 #Emplacement du fichier source
-SOURCEFILEPATH="/home/shrom/script/dl.couillet.ovh/include"
+SOURCEFILEPATH=""
 SOURCEPATH="$SOURCEFILEPATH/sources.sh"
 
 source $SOURCEPATH
@@ -31,7 +31,7 @@ BASEPATH="/home/${USERNAME}"
 CONFIGPATH="${BASEPATH}/.rtorrent.rc"
 
 #Nom usuel de la seedbox
-SERVERNAME="dl.couillet.ovh"
+SERVERNAME=""
 
 #Nom du binaire de rtorrent 
 SERVICE="rtorrent"
@@ -44,10 +44,10 @@ OPTIONS=""
 
 #Repertoire de téléchargement
 mountpointaddress="10.0.0.1"
-mountpoint="$mountpointaddress:$BASEPATH/vod.couillet.ovh"
+mountpoint="$mountpointaddress:$BASEPATH/"
 destfolder="$BASEPATH/$SERVERNAME/vod/"
 seedboxmount=$(mount $mountpoint $destfolder 2>&1 >/dev/null)
-mounttest=$(mount -l |grep vod.couillet.ovh)
+mounttest=$(mount -l |grep)
 
 ############################################################
 #############------END CONFIGURATION------------############
